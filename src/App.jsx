@@ -8,18 +8,24 @@ import ShowcaseSection from "./sections/ShowcaseSection";
 import LogoShowcase from "./sections/LogoShowcase";
 import FeatureCards from "./sections/FeatureCards";
 import Navbar from "./components/NavBar";
+import Community from "./sections/Community";
+import AboutUs from "./sections/AboutUs";
+import Download from "./sections/Download";
 
 const App = () => (
   <>
     <Navbar />
     <Hero />
-    <ShowcaseSection />
-    <LogoShowcase />
-    <FeatureCards />
-    <Experience />
-    <TechStack />
+    <AboutUs />
+    {/* <ShowcaseSection /> */}
+    {/* <LogoShowcase /> */}
     <Testimonials />
-    <Contact />
+    <Community />
+    {/* <FeatureCards /> */}
+    {/* <Experience /> */}
+    {/* <TechStack /> */}
+    <Download />
+    {/* <Contact /> */}
     <Footer />
   </>
 );

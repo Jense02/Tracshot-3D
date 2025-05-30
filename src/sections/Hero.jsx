@@ -6,6 +6,21 @@ import Button from "../components/Button";
 import { words } from "../constants";
 import HeroExperience from "../components/models/hero_models/HeroExperience";
 
+const produceSpans = (text, animationClass) => {
+  return text.split("").map((letter, index) => (
+    <span
+      key={index}
+      // Combineer de basis letter-styling klasse met de specifieke animatieklasse
+      className={`text-rotate-span ${animationClass}`}
+      style={{
+        animationDelay: `${index * 0.05}s`,
+        // De kleur is nu gedefinieerd in .text-rotate-item in index.css
+      }}
+    >
+      {letter === " " ? "\u00A0" : letter}
+    </span>
+  ));
+};
 const Hero = () => {
   useGSAP(() => {
     gsap.fromTo(
@@ -17,48 +32,37 @@ const Hero = () => {
 
   return (
     <section id="hero" className="relative overflow-hidden">
-      <div className="absolute top-0 left-0 z-10">
-        <img src="/images/bg.png" alt="" />
-      </div>
-
       <div className="hero-layout">
+        {/* LEFT: Hero Content */}
         {/* LEFT: Hero Content */}
         <header className="flex flex-col justify-center md:w-full w-screen md:px-20 px-5">
           <div className="flex flex-col gap-7">
             <div className="hero-text">
+              <h1 className="main-tracshot-title text-red-500 font-extrabold text-7xl md:text-8xl lg:text-9xl italic leading-none">
+                TRACSHOT
+              </h1>
               <h1>
-                Shaping
-                <span className="slide">
-                  <span className="wrapper">
-                    {words.map((word, index) => (
-                      <span
-                        key={index}
-                        className="flex items-center md:gap-3 gap-1 pb-2"
-                      >
-                        <img
-                          src={word.imgPath}
-                          alt="person"
-                          className="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50"
-                        />
-                        <span>{word.text}</span>
-                      </span>
-                    ))}
+                <span className="mr-4 md:mr-6">Master Your</span>
+                <span className="text-rotate-container">
+                  {/* Eerste roterende tekstregel */}
+                  <span className="text-rotate-item" aria-label={words[0].text}>
+                    {produceSpans(words[0].text, "animation-1")}{" "}
+                    {/* Gebruik de custom animatieklasse */}
+                  </span>
+                  {/* Tweede roterende tekstregel - absoluut gepositioneerd over de eerste */}
+                  <span className="text-rotate-item" aria-label={words[1].text}>
+                    {produceSpans(words[1].text, "animation-2")}{" "}
+                    {/* Gebruik de custom animatieklasse */}
                   </span>
                 </span>
+                <br />
               </h1>
-              <h1>into Real Projects</h1>
-              <h1>that Deliver Results</h1>
             </div>
 
-            <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
-              Hi, I’m Adrian, a developer based in Croatia with a passion for
-              code.
-            </p>
-
             <Button
-              text="See My Work"
-              className="md:w-80 md:h-16 w-60 h-12"
-              id="counter"
+              text="Check it out"
+              className="md:w-80 md:h-16 w-60 h-12 font-bold"
+              link="#about-us"
             />
           </div>
         </header>
@@ -70,8 +74,6 @@ const Hero = () => {
           </div>
         </figure>
       </div>
-
-      <AnimatedCounter />
     </section>
   );
 };

@@ -1,31 +1,26 @@
 const navLinks = [
   {
-    name: "Work",
-    link: "#work",
+    name: "About Us",
+    link: "#about-us",
   },
   {
-    name: "Experience",
-    link: "#experience",
-  },
-  {
-    name: "Skills",
-    link: "#skills",
-  },
-  {
-    name: "Testimonials",
+    name: "Features",
     link: "#testimonials",
+  },
+  {
+    name: "Community",
+    link: "#community",
+  },
+
+  {
+    name: "Download",
+    link: "#download",
   },
 ];
 
 const words = [
-  { text: "Ideas", imgPath: "/images/ideas.svg" },
-  { text: "Concepts", imgPath: "/images/concepts.svg" },
-  { text: "Designs", imgPath: "/images/designs.svg" },
-  { text: "Code", imgPath: "/images/code.svg" },
-  { text: "Ideas", imgPath: "/images/ideas.svg" },
-  { text: "Concepts", imgPath: "/images/concepts.svg" },
-  { text: "Designs", imgPath: "/images/designs.svg" },
-  { text: "Code", imgPath: "/images/code.svg" },
+  { text: "Aim", imgPath: "/images/ideas.svg" },
+  { text: "Progress", imgPath: "/images/concepts.svg" },
 ];
 
 const counterItems = [
@@ -147,10 +142,11 @@ const techStackIcons = [
 
 const expCards = [
   {
-    review: "Adrian brought creativity and technical expertise to the team, significantly improving our frontend performance. His work has been invaluable in delivering faster experiences.",
+    review:
+      "Adrian brought creativity and technical expertise to the team, significantly improving our frontend performance. His work has been invaluable in delivering faster experiences.",
     imgPath: "/images/exp1.png",
     logoPath: "/images/logo1.png",
-    title: "Frontend Developer",
+    title: "AI-Power",
     date: "January 2023 - Present",
     responsibilities: [
       "Developed and maintained user-facing features for the Hostinger website.",
@@ -159,7 +155,8 @@ const expCards = [
     ],
   },
   {
-    review: "Adrian’s contributions to Docker's web applications have been outstanding. He approaches challenges with a problem-solving mindset.",
+    review:
+      "Adrian’s contributions to Docker's web applications have been outstanding. He approaches challenges with a problem-solving mindset.",
     imgPath: "/images/exp2.png",
     logoPath: "/images/logo2.png",
     title: "Full Stack Developer",
@@ -171,7 +168,8 @@ const expCards = [
     ],
   },
   {
-    review: "Adrian’s work on Appwrite’s mobile app brought a high level of quality and efficiency. He delivered solutions that enhanced our mobile experience & meet our product goals.",
+    review:
+      "Adrian’s work on Appwrite’s mobile app brought a high level of quality and efficiency. He delivered solutions that enhanced our mobile experience & meet our product goals.",
     imgPath: "/images/exp3.png",
     logoPath: "/images/logo3.png",
     title: "React Native Developer",
@@ -201,46 +199,64 @@ const expLogos = [
 
 const testimonials = [
   {
-    name: "Esther Howard",
-    mentions: "@estherhoward",
-    review:
-      "I can’t say enough good things about Adrian. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.",
-    imgPath: "/images/client1.png",
+    icon: "/images/icons/illustrator.png", // Placeholder, replace with your actual icon path
+    title: "AI-Powered Analysis",
+    description:
+      "Advanced computer vision algorithms analyze your target in real-time, providing instant feedback on shot placement and grouping.",
   },
   {
-    name: "Wade Warren",
-    mentions: "@wadewarren",
-    review:
-      "Working with Adrian was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.",
-    imgPath: "/images/client3.png",
+    icon: "/images/icons/line-chart.png", // Placeholder, replace with your actual icon path
+    title: "Progress Tracking",
+    description:
+      "Track your improvement over time with detailed statistics, trends, and performance metrics that help identify areas for improvement.",
   },
   {
-    name: "Guy Hawkins",
-    mentions: "@guyhawkins",
-    review:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    imgPath: "/images/client2.png",
+    icon: "/images/icons/solution.png", // Placeholder, replace with your actual icon path
+    title: "Smart Recommendations",
+    description:
+      "Receive personalized tips and training recommendations based on your shooting patterns and performance data.",
   },
   {
-    name: "Marvin McKinney",
-    mentions: "@marvinmckinney",
-    review:
-      "Adrian was a pleasure to work with. He turned our outdated website into a fresh, intuitive platform that’s both modern and easy to navigate. Fantastic work overall.",
-    imgPath: "/images/client5.png",
+    icon: "/images/icons/community.png", // Placeholder, replace with your actual icon path
+    title: "Community Integration",
+    description:
+      "Connect with fellow shooters, share achievements, and participate in challenges to enhance your training experience.",
+  },
+];
+
+const plans = [
+  {
+    name: "Free",
+    price: "€0",
+    features: [
+      "Basic target analysis",
+      "Score calculation",
+      "Shot grouping visualization",
+      "Basic progress tracking",
+    ],
   },
   {
-    name: "Floyd Miles",
-    mentions: "@floydmiles",
-    review:
-      "Adrian’s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional!",
-    imgPath: "/images/client4.png",
+    name: "Premium",
+    price: "€9.99/month",
+    features: [
+      "Advanced target analysis",
+      "Detailed performance metrics",
+      "Training recommendations",
+      "Cloud storage",
+      "Priority support",
+    ],
   },
   {
-    name: "Albert Flores",
-    mentions: "@albertflores",
-    review:
-      "Adrian was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend and backend dev are top-notch.",
-    imgPath: "/images/client6.png",
+    name: "VIP",
+    price: "€14.99/month",
+    features: [
+      "All Premium features",
+      "Custom training programs",
+      "Video analysis",
+      "Personal coaching sessions",
+      "Early access to new features",
+      "Exclusive community events",
+    ],
   },
 ];
 
@@ -275,4 +291,5 @@ export {
   techStackIcons,
   techStackImgs,
   navLinks,
+  plans,
 };

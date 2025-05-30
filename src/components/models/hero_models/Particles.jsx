@@ -10,7 +10,7 @@ const Particles = ({ count = 200 }) => {
       temp.push({
         position: [
           (Math.random() - 0.5) * 10,
-          Math.random() * 10 + 5, // higher starting point
+          Math.random() * 10 + 0, // higher starting point
           (Math.random() - 0.5) * 10,
         ],
         speed: 0.005 + Math.random() * 0.001,
@@ -48,7 +48,7 @@ const Particles = ({ count = 200 }) => {
         />
       </bufferGeometry>
       <pointsMaterial
-        color="#ffffff"
+        color="#ff9e29"
         size={0.05}
         transparent
         opacity={0.9}

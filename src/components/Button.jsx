@@ -1,41 +1,69 @@
+import React from "react"; // React is nodig als je JSX gebruikt
+
 /**
  * A reusable CTA button component.
- * When clicked, it scrolls smoothly to the section with ID "counter",
- * with a small offset from the top for better visual placement.
+ * It can act as a smooth-scrolling anchor or a regular external link.
  */
 
-const Button = ({ text, className, id }) => {
-  return (
-    <a
-      onClick={(e) => {
-        e.preventDefault(); // Stop the link from jumping instantly
+// De Button component ontvangt nu een 'link' prop
+const Button = ({ text, className, id, link, target, rel }) => {
+  // Bepaal of het een interne scroll-link of een externe link is
+  const isInternalLink = link && link.startsWith("#");
 
-        const target = document.getElementById("counter"); // Find the section with ID "counter"
+  // De functie voor smooth-scrolling
+  const handleScroll = (e) => {
+    e.preventDefault(); // Voorkom direct springen
 
-        // Only scroll if we found the section and an ID is passed in
-        // taht prevents the contact button from scrolling to the top
-        if (target && id) {
-          const offset = window.innerHeight * 0.15; // Leave a bit of space at the top
+    const targetId = link.substring(1); // Haal de ID op uit de link (e.g., "#about-us" -> "about-us")
+    const targetElement = document.getElementById(targetId);
 
-          // Calculate how far down the page we need to scroll
-          const top =
-            target.getBoundingClientRect().top + window.pageYOffset - offset;
+    if (targetElement) {
+      // Optionele offset vanaf de bovenkant (bijvoorbeeld om de navbar vrij te houden)
+      const offset = window.innerHeight * 0.15; // 15% van de schermhoogte
 
-          // Scroll smoothly to that position
-          window.scrollTo({ top, behavior: "smooth" });
-        }
-      }}
-      className={`${className ?? ""} cta-wrapper`} // Add base + extra class names
-    >
-      <div className="cta-button group">
-        <div className="bg-circle" />
-        <p className="text">{text}</p>
-        <div className="arrow-wrapper">
-          <img src="/images/arrow-down.svg" alt="arrow" />
+      const top =
+        targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+
+      window.scrollTo({ top, behavior: "smooth" });
+    }
+  };
+
+  if (isInternalLink) {
+    return (
+      <a
+        href={link} // Gebruik de 'link' prop als href
+        onClick={handleScroll} // Roept de smooth scroll functie aan
+        className={`${className ?? ""} cta-wrapper`}
+      >
+        <div className="cta-button group">
+          <div className="bg-circle" />
+          <p className="text">{text}</p>
+          <div className="arrow-wrapper">
+            <img src="/images/arrow-down.svg" alt="arrow" />
+          </div>
         </div>
-      </div>
-    </a>
-  );
+      </a>
+    );
+  } else {
+    // Dit is voor externe links (zoals de Google Form link)
+    return (
+      <a
+        href={link} // Gebruik de 'link' prop als href
+        target={target}
+        rel={rel}
+        className={`${className ?? ""} cta-wrapper`} // Gebruik dezelfde styling als interne knop
+      >
+        <div className="cta-button group">
+          <div className="bg-circle" />
+          <p className="text">{text}</p>
+          <div className="arrow-wrapper">
+            <img src="/images/arrow-down.svg" alt="arrow" />{" "}
+            {/* Je kunt hier een ander icoon gebruiken voor externe links */}
+          </div>
+        </div>
+      </a>
+    );
+  }
 };
 
 export default Button;
