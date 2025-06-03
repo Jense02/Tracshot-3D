@@ -38,7 +38,7 @@ const Community = () => {
             <Button
               text="Join Now"
               className="md:w-80 md:h-16 w-60 h-12 font-bold mt-8"
-              link="YOUR_GOOGLE_FORM_LINK_HERE"
+              link="https://docs.google.com/forms/d/e/1FAIpQLSfTdSSZQvvLl2itX_OEelDZj2Wf8wNHlWXjyCBHASrqaxTfmA/viewform?usp=dialog"
               target="_blank"
               rel="noopener noreferrer"
             />
