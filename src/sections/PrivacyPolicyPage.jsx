@@ -16,11 +16,10 @@ const PrivacyPolicyPage = () => {
       <section className="mb-6">
         <h2 className="text-2xl font-semibold mb-3">1. Wie zijn wij?</h2>
         <p className="mb-2">
-          Deze website, tracshot.eu (hierna "Website"), wordt beheerd door het
-          TracShot team (hierna "wij", "ons", "onze"). TracShot is ontstaan als
-          een project van studenten in het kader van de cursus Business
-          Development, met als doel het ontwikkelen van technologie om de
-          schietsportervaring te verbeteren.
+          Deze website, tracshot.eu, wordt beheerd door het TracShot team.
+          TracShot is ontstaan als een project van studenten in het kader van de
+          cursus Business Development, met als doel het ontwikkelen van
+          technologie om de schietsportervaring te verbeteren.
         </p>
         <p className="mb-2">
           Voor vragen over dit privacybeleid of over de verwerking van uw
